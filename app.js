@@ -6,16 +6,16 @@ const app = express()
 const bot = new Telegraf(process.env.TOKEN)
 
 
-bot.start(ctx=>{
-    ctx.reply("Bot started")
-})
+// bot.start(ctx=>{
+//     ctx.reply("Bot started")
+// })
 
-bot.command('test',ctx=>{
-    ctx.reply("This is test command")
-})
+// bot.command('test',ctx=>{
+//     ctx.reply("This is test command")
+// })
 
-app.use(bot.webhookCallback(`/${process.env.TOKEN}`))
-bot.telegram.setWebhook(`${process.env.DOMAIN}:8443/${process.env.TOKEN}`)
+// app.use(bot.webhookCallback(`/${process.env.TOKEN}`))
+// bot.telegram.setWebhook(`${process.env.DOMAIN}:8443/${process.env.TOKEN}`)
 
 app.get("/", (req, res) => {
     res.json({"status": "the bot is running"})
