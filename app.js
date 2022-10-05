@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
     res.json({"status": "the bot is running"})
 })
 
-app.listen(5000, ()=>{
+
+const port = process.env.PORT || 3030
+app.listen(port , ()=>{
     console.log("Bot is running")
 })
